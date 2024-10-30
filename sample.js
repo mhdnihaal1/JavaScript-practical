@@ -415,6 +415,24 @@
 // console.log(num(23,54,sum));
 // console.log(num(45,21,multiple));
 
+
+
+//-----------------------weekset---------------------
+
+// let weakSet = new WeakSet();
+
+// let obj1 = { key: 'value1' }
+// let obj2 = { key0: 'value2' }
+
+// weakSet.add(obj1);
+// weakSet.add(obj2);
+
+// console.log(weakSet.has(obj1)); // Output: true
+
+// weakSet.delete(obj1);
+
+// console.log(weakSet.has(obj1)); // Output: false
+
 //------------------immediate invoke function (IIFC)------------------------
 
 // (function (){
@@ -910,129 +928,221 @@
 
 // bind()
 
-// function name(nam){
-//   console.log('this is me '+nam);
-// }
-// const person ={nam:'Nihal'}
-// const bind=name.bind(person)
-// bind()
-
-// const promise1 = new Promise((resolve, reject) => setTimeout(reject, 1000, 'Promise 1'));
-// const promise2 = new Promise((resolve, reject) => setTimeout(resolve, 1000, 'Promise 2'));
-
-// Promise.race([promise2, promise1])
-//   .then(result => console.log(result)) // Output: Promise 1
-//   .catch(error => console.error(error));
 
 
+// let a = 10;
+// let b = 34;
+// let c = 90;
+// let d=110;
 
+// const { Script } = require("vm");
 
-// const promise1=new Promise((resolve,reject)=>resolve(1000))
-// const promise2=new Promise((resolve,reject)=>reject('ok'))
-
-// Promise.race([promise1,promise2]).then((result)=>console.log(result)).catch((error)=>console.log(error))
-
-// const fruits= ['apple','watermelon','pineapple','jackfruit','lemon','orange']
-
-
-// const f =fruits.splice(3,1,'mango')
-
-// console.log(fruits);
-
-// const fruits= ['apple','watermelon','pineapple','jackfruit','lemon','orange']
-
-// console.log(Math.trunc(34.45));
-
-// const name=' nihal, muhammed, nazim, muhammed';
-// let firstname=name.slice(name.indexOf(' ')+1)
-// console.log(firstname);
-
-// console.log(name.split(''));
-
-// function *a(){
-//     console.log('stop1');
-//     yield 100;
-
-//     console.log('stop2');
-//     yield 200;
-
-//     console.log('stop3');
-//     yield 300;
-
-//     console.log('stop 4');
+//======================================
+// const obj = { a: 1, b: 2, c: 3 }; 
+// for(let x in obj){
+//     console.log(x+':'+obj[x]);
 // }
 
-// const iterable=a()
+//===================================
+// const obj = { a: 1, b: 2, c: 3 };
+//  const obj1=Object.values(obj)
+//  console.log(obj1);
 
-// console.log(iterable.next());
-// console.log(iterable.next());
-
-// console.log(iterable.next());
-
-// console.log(iterable.next());
-
-// const ar =[1,2,3,4]
-// ar.shift()
-// ar.pop()
-// console.log(ar);
-
-// let array=[];
-// let s = "Hello, my name is John"
-// const split=s.split(' ')
-
-// console.log(split.length)
-
-let n = 6;
-if(n%2==0){
-  console.log(n/2)
-}
-// let num = n / 2; 
-// console.log(num)
-// let nums = Math.ceil(num);
-// console.log(nums);
-
-// console.log(nums-1)
-// console.log()
-
-// const descendingArray = Array.from({length: 65}, (_, i) => 65 - i);
-// console.log(descendingArray);
+// Object.entries(obj).forEach(([key, value]) => {
+//     console.log(key + ': ' + value);
+// });
 
 
+//========================================================
+// const obj ={a:1,b:2,c:3}
 
-const wallet = await Wallet.findOne({ userId: userId });
+// for(let key in obj){
+//     console.log(key+':'+obj[key]);
+// }
 
-    if (wallet) {
-      const newEntry = {
-        Reason: "Returned",
-        amount: wallet.amount + productprice,
-        transaction: "Deposits",
-        date: new Date(),
-      };
+//==========================================avg=== 
 
-      const amountToAdd = parseFloat(productprice);
+//const size=[4,7,2,47,8,2,3,4,2,2,]
+// //console.log(...size);
 
-      wallet.history.push(newEntry);
+// function calculateAverage(...array){
+//   //  console.log('hi');
+//    const sum=array.reduce((acc,num)=>acc+num) 
+//       const avg=sum/array.length
+//       console.log(avg);
 
-      wallet.balance = parseFloat(wallet.balance) + amountToAdd;
+// }
+// calculateAverage(size)
 
-      await wallet.save();
+//=========================================reverse string
 
-      console.log("New history entry added for user's wallet.");
-    } else {
-      const newWallet = new Wallet({
-        userId: userId,
-        balance: productprice,
-        history: [
-          {
-            Reason: "returnedproduct",
-            amount: productprice,
-            transaction: "Deposit",
-            date: new Date(),
-          },
-        ],
-      });
+// function reverseString (string){
 
-      await newWallet.save();
+// const split =string.split('')
+// const reverse=split.reverse()
+// const join=reverse.join('')
+// console.log(join);
 
-      console.log("New wallet created for the user.");
-    }
+// }
+
+// const string='hello'
+// reverseString(string)
+
+//========================================finding max number
+
+//  const size=[4,7,2,47,8,2,3,4,2,2,]
+
+//  function findmax(size){
+
+// const newsize=size.sort((a,b)=>b-a)
+// console.log(newsize);
+
+//  const max=newsize[0]
+//  console.log(max);
+
+//  }
+// findmax(size)
+
+//==========================================first letter capital
+
+// const string = 'HELLO';
+
+// function titleCase(str) {
+    
+//         return  str[0].toLowerCase() + str.slice(1)
+ 
+// }
+
+// const result = titleCase(string);
+// console.log(result); 
+
+//============================================================
+// const array=[1,2,3,4,51,2,3,4,6,7,8,9]
+
+//     const newarray=[]
+
+//     for(let i=0;i<array.length;i++){
+//           let one=true
+//       for(let j=0;j<array.length;j++){
+//         if(i!==j&&array[i]==array[j]){
+//          one=false
+//         }    
+//     }
+//     if(one){
+//         newarray.push(array[i])        
+//     }
+//     } console.log(newarray);
+
+
+//==========================================
+
+// function primenumber(limit){
+//     let prime=[];
+
+//     for(let i=2;i<=limit;i++){
+//         let one=true
+//         for(let j=2;j<=Math.sqrt(i);j++){
+//            if(i%j==0){
+//             one=false
+//             break;
+//            }
+//         }
+//         if(one){
+//             prime.push(i)
+//         }
+//     }
+//     return prime
+// }
+// const limit=12;
+// const ones=primenumber(limit)
+// console.log(ones);
+
+
+
+//==================================switch===================
+
+// const cars='bugatti'
+
+
+// switch (cars){
+//     case 'swift':
+//     console.log('is swift');
+//      break;
+//      case'bugatti':
+//      console.log('is bugatti');
+//      break;
+//      default:
+//      console.log('nothing');
+// }
+//====================================================================
+// const a = [1, 2, 324, 456, 87]
+
+// const c = a.join('')
+//             .split('')
+//             .map(Number); 
+
+// console.log(c);
+
+//======================================
+//  const array=[1,2,3,4,5,6,7,8,9]
+
+
+// const reduce = array.filter((num) =>num>7)
+// console.log(reduce);
+
+// const largestNumber = array.reduce((max, current) =>{
+//     max+current
+    
+//     console.log(max,current)
+// });
+// console.log(largestNumber);
+//=====================
+//  const arr = [
+//   { name: "John", age: 30 },
+//   { name: "alex", age: 20 }
+//  ]
+
+//  const filteredArr = arr.filter(obj => obj.age > 20)
+
+//  console.log(filteredArr)
+//=====================================================
+
+
+// const arr=[1,1,2,3,2]
+
+// const filter= arr.filter((elem,index,arr)=>{
+//  return arr.indexOf(elem) !== index
+// })
+// console.log(filter);
+
+//==================================================
+
+// const promise= Promise.resolve(10)
+// const promise2=promise.then((result)=>{
+//   console.log(result)
+//    return result*2 
+//   })
+
+//   console.log(promise2);
+//   console.log(promise);
+
+//   promise2.then((result)=>{
+//     console.log(result);
+//   })
+
+//-===============================finding the length of each index========================
+
+// const sentences = ["please wait", "continue to fight", "continue to win"]
+// let count=0;
+// let max=0;
+// for(let i=0;i<sentences.length;i++){
+//   const split=sentences[i].split(" ")
+  
+//   count=split.length;
+//   max=count
+// console.log(count);
+// }
+
+//===================date with day/month/years====================
+
+// console.log(new Date().toLocaleDateString({day:'numeric',month:'long',year:'numeric'}))

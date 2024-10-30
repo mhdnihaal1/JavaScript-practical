@@ -1,14 +1,20 @@
-
+//=================process.nexttick===============
+// process.nextTick(() => {
+//     console.log("Executed in the next tick");
+// });
+// //=================setTimeout and clear timeout=========
 // const timeoutId = setTimeout(() => {
 //     console.log('Timeout completed after 10 seconds');
-// }, 10000);
+    
+// }, 4000);
+
 
 // setTimeout(() => {
 //     clearTimeout(timeoutId);
 //     console.log('Timeout cleared after 2 seconds');
 // }, 2000);
 
-//============================================
+//===========================setIntervel and clearIntervel=================
 
 // const set = setInterval(()=>{
 //     console.log(123);
@@ -18,14 +24,15 @@
 //     clearInterval(set)
 //     console.log('ok');
 // },10000)
-//====================count====================
 
-// cars = ["Toyota", "Honda", "Ford", "Toyota", "Chevrolet", "Honda", "Tesla", "Ford", "Tesla",'Toyota']
+//===============================count of specific car===========================
+
+// cars = ["Toyota", "Honda", "Ford", "Toyota", "Chevrolet", "Honda", "Tesla", "Ford", "Tesla",'Toyota','Toyota']
 
 //     const reduce = cars.reduce((fir,sec)=> (sec==='Toyota'?fir+1:fir),0)
 
 // console.log(reduce);
-//======================================================
+//========================remove duplicates  ==============================
 
 
 // const arr = [5,2,2,1,7,5,5]
@@ -46,13 +53,3 @@
 
 // console.log(arrr);
 
-
-
-// const timeoutId = setTimeout(()=>{
-//     console.log("Delayed function executed after 2000 milliseconds");
-// },5000)
-
-// setTimeout(()=>{clearTimeout(timeoutId)
-//     console.log('k');},3000)
-
-// clearInterval(timeoutId,5000);
